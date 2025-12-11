@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Medan Arsitek — Blog</title>
+  <meta name="description" content="Medan Arsitek — Artikel, inspirasi, dan tutorial tentang arsitektur modern." />
+  <meta name="keywords" content="arsitektur, desain interior, blog arsitek, medan arsitek" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* small helper for article excerpt truncation */
+    .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  </style>
+
+  <!-- JSON-LD / Schema for Blog -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Blog",
+    "name":"Medan Arsitek",
+    "url":"/",
+    "description":"Blog tentang arsitektur modern, desain dan konstruksi.",
+    "publisher": { "@type": "Organization", "name": "Medan Arsitek" }
+  }
+  </script>
+
+  <script>
+    if(localStorage.theme === 'dark' ||
+       (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)){
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  </script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 min-h-screen">
+
+  <!-- NAV -->
+  <header class="bg-white dark:bg-gray-800 shadow sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between gap-4">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-gradient-to-tr from-blue-500 to-teal-400 rounded-md flex items-center justify-center text-white font-bold">MA</div>
+        <div>
+          <div class="font-bold text-lg">Medan Arsitek</div>
+          <div class="text-xs text-gray-500 dark:text-gray-400">Inspirasi & edukasi arsitektur</div>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex gap-6 text-sm items-center">
+        <a href="#" class="hover:text-blue-600">Artikel</a>
+        <a href="#" class="hover:text-blue-600">Proyek</a>
+        <a href="about.html" class="hover:text-blue-600">About</a>
+        <a href="privacy.html" class="hover:text-blue-600">Privacy</a>
+        <a href="disclaimer.html" class="hover:text-blue-600">Disclaimer</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <!-- search simple -->
+        <form class="hidden md:flex items-center bg-gray-100 dark:bg-gray-700 rounded overflow-hidden" action="#" onsubmit="event.preventDefault();">
+          <input type="search" placeholder="Cari artikel..." class="px-3 py-2 bg-transparent outline-none text-sm" />
+          <button class="px-3 text-sm">🔍</button>
+        </form>
+
+        <button onclick="toggleTheme()" title="Toggle theme" class="text-xl">🌗</button>
+        <button class="md:hidden text-2xl" onclick="toggleMenu()">☰</button>
+      </div>
+    </div>
+
+    <!-- mobile nav -->
+    <div id="mobileMenu" class="md:hidden hidden px-4 pb-4">
+      <a href="#" class="block py-2">Artikel</a>
+      <a href="#" class="block py-2">Proyek</a>
+      <a href="about.html" class="block py-2">About</a>
+      <a href="privacy.html" class="block py-2">Privacy</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="max-w-6xl mx-auto px-5 py-10 grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <div class="lg:col-span-2">
+      <div class="rounded-lg overflow-hidden shadow-lg bg-white dark:bg-gray-800">
+        <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?q=80&w=1600" alt="Featured" class="w-full h-64 object-cover" loading="lazy">
+        <div class="p-6">
+          <div class="text-sm text-gray-500 dark:text-gray-400">Feature</div>
+          <h2 class="text-2xl font-bold mt-2">Membangun Rumah Tropis Modern: Panduan Lengkap</h2>
+          <p class="mt-3 text-gray-600 dark:text-gray-300 line-clamp-3">Dalam artikel ini kami membahas prinsip desain rumah tropis modern, ventilasi silang, material ramah iklim, dan layout yang efisien untuk keluarga urban.</p>
+          <div class="mt-4 flex items-center justify-between">
+            <a href="#" class="inline-block bg-blue-600 text-white px-4 py-2 rounded shadow-sm">Baca Selengkapnya →</a>
+            <div class="text-sm text-gray-500">12 Des 2025 • 8 menit baca</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ARTICLE LIST -->
+      <div class="mt-8 space-y-6">
+        <!-- repeatable article card -->
+        <article class="flex gap-4 items-start bg-white dark:bg-gray-800 rounded-lg shadow-sm overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=600" alt="Thumb" class="w-40 h-28 object-cover flex-shrink-0">
+          <div class="p-4 flex-1">
+            <a href="#" class="text-xs text-blue-600">Desain Interior</a>
+            <h3 class="font-semibold text-lg mt-1">Tips memilih material lantai untuk rumah tropis</h3>
+            <p class="mt-2 text-sm text-gray-600 dark:text-gray-300 line-clamp-3">Material lantai mempengaruhi kenyamanan termal dan perawatan. Pelajari pro dan kontra keramik, ubin batu alam, dan kayu rekayasa.</p>
+            <div class="mt-3 text-sm text-gray-500 flex justify-between">
+              <span>oleh Admin</span>
+              <span>3 Des 2025</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="flex gap-4 items-start bg-white dark:bg-gray-800 rounded-lg shadow-sm overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=600" alt="Thumb" class="w-40 h-28 object-cover flex-shrink-0">
+          <div class="p-4 flex-1">
+            <a href="#" class="text-xs text-blue-600">Konstruksi</a>
+            <h3 class="font-semibold text-lg mt-1">Rencana pondasi hemat biaya untuk lahan miring</h3>
+            <p class="mt-2 text-sm text-gray-600 dark:text-gray-300 line-clamp-3">Teknik pondasi bertingkat dan pelat cakar adalah solusi umum untuk lahan miring. Simak rekomendasi bahan dan langkahnya.</p>
+            <div class="mt-3 text-sm text-gray-500 flex justify-between">
+              <span>oleh Iwan</span>
+              <span>28 Nov 2025</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- pagination (simple) -->
+        <div class="flex justify-center mt-4">
+          <nav class="inline-flex gap-2 text-sm">
+            <a href="#" class="px-3 py-2 bg-white dark:bg-gray-800 rounded shadow">«</a>
+            <a href="#" class="px-3 py-2 bg-blue-600 text-white rounded">1</a>
+            <a href="#" class="px-3 py-2 bg-white dark:bg-gray-800 rounded">2</a>
+            <a href="#" class="px-3 py-2 bg-white dark:bg-gray-800 rounded">3</a>
+            <a href="#" class="px-3 py-2 bg-white dark:bg-gray-800 rounded">»</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside class="space-y-6">
+      <!-- about widget -->
+      <div class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm">
+        <h4 class="font-semibold">Tentang Medan Arsitek</h4>
+        <p class="text-sm text-gray-600 dark:text-gray-300 mt-2">Portal inspirasi arsitektur: artikel, tutorial, dan berita proyek lokal.</p>
+      </div>
+
+      <!-- newsletter -->
+      <div class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm">
+        <h4 class="font-semibold">Newsletter</h4>
+        <p class="text-sm text-gray-600 dark:text-gray-300 mt-2">Dapatkan artikel terbaru tiap minggu langsung ke email.</p>
+        <form class="mt-3" onsubmit="event.preventDefault(); alert('Terima kasih! (demo)')">
+          <input type="email" placeholder="email@domain.com" required class="w-full px-3 py-2 rounded bg-gray-100 dark:bg-gray-700 text-sm outline-none" />
+          <button class="w-full mt-3 px-3 py-2 bg-blue-600 text-white rounded">Subscribe</button>
+        </form>
+      </div>
+
+      <!-- categories -->
+      <div class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm">
+        <h4 class="font-semibold">Kategori</h4>
+        <ul class="mt-3 text-sm space-y-2 text-gray-600 dark:text-gray-300">
+          <li><a href="#" class="hover:underline">Desain Interior</a></li>
+          <li><a href="#" class="hover:underline">Konstruksi</a></li>
+          <li><a href="#" class="hover:underline">Proyek</a></li>
+          <li><a href="#" class="hover:underline">Tips Material</a></li>
+        </ul>
+      </div>
+
+      <!-- recent posts -->
+      <div class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm">
+        <h4 class="font-semibold">Postingan Terbaru</h4>
+        <ul class="mt-3 space-y-3 text-sm">
+          <li class="flex items-start gap-3">
+            <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=200" class="w-12 h-8 object-cover rounded" alt="">
+            <div>
+              <a href="#" class="block font-medium">Studio rumah minimalis di Medan</a>
+              <div class="text-xs text-gray-500">5 Des 2025</div>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <img src="https://images.unsplash.com/photo-1505691723518-36a0d305d6ff?q=80&w=200" class="w-12 h-8 object-cover rounded" alt="">
+            <div>
+              <a href="#" class="block font-medium">Ventilasi alami untuk iklim tropis</a>
+              <div class="text-xs text-gray-500">1 Des 2025</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </aside>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-white dark:bg-gray-800 border-t dark:border-gray-700 mt-10">
+    <div class="max-w-6xl mx-auto px-5 py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+      <div>© 2025 Medan Arsitek · All Rights Reserved</div>
+      <div class="flex gap-4">
+        <a href="/sitemap.xml">Sitemap</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/disclaimer.html">Disclaimer</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu(){ document.getElementById('mobileMenu').classList.toggle('hidden') }
+    function toggleTheme(){ const html=document.documentElement; if(html.classList.contains('dark')){ html.classList.remove('dark'); localStorage.theme='light' } else { html.classList.add('dark'); localStorage.theme='dark' } }
+  </script>
+</body>
+</html>
