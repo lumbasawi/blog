@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Medan Arsitek – Informasi Arsitektur Modern</title>
+
+<meta name="description" content="Medan Arsitek adalah platform informasi arsitektur, desain bangunan, interior, dan teknologi konstruksi modern.">
+<meta name="keywords" content="medan arsitek, arsitektur, desain bangunan, interior, arsitek medan, konstruksi">
+<meta name="author" content="Medan Arsitek">
+
+<!-- OpenGraph -->
+<meta property="og:title" content="Medan Arsitek">
+<meta property="og:description" content="Informasi arsitektur modern, desain rumah, dan inspirasi interior.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://via.placeholder.com/1200x630">
+<meta property="og:url" content="https://domainmu.com">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Schema JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"Medan Arsitek",
+  "url":"https://domainmu.com",
+  "description":"Informasi dan edukasi dunia arsitektur modern.",
+  "publisher":{
+    "@type":"Organization",
+    "name":"Medan Arsitek"
+  }
+}
+</script>
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Dark Mode Toggle Script -->
+<script>
+  if(localStorage.theme === 'dark' ||
+     (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)){
+    document.documentElement.classList.add('dark')
+  } else {
+    document.documentElement.classList.remove('dark')
+  }
+</script>
+
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 dark:text-gray-200">
+
+<!-- NAVIGATION -->
+<header class="bg-white dark:bg-gray-800 shadow sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+
+    <a href="index.html" class="font-bold text-xl">Medan Arsitek</a>
+
+    <!-- MENU DESKTOP -->
+    <nav class="hidden md:flex gap-6 text-sm">
+      <a href="index.html" class="hover:text-blue-600">Home</a>
+      <a href="about.html" class="hover:text-blue-600">About</a>
+      <a href="privacy.html" class="hover:text-blue-600">Privacy</a>
+      <a href="disclaimer.html" class="hover:text-blue-600">Disclaimer</a>
+    </nav>
+
+    <!-- Dark Mode Toggle -->
+    <button onclick="toggleTheme()" class="ml-4 text-xl">🌙</button>
+
+    <!-- MOBILE BUTTON -->
+    <button onclick="toggleMenu()" class="md:hidden text-2xl">☰</button>
+  </div>
+
+  <!-- MOBILE NAV -->
+  <div id="mobileMenu" class="hidden md:hidden px-4 pb-4">
+    <a href="index.html" class="block py-2">Home</a>
+    <a href="about.html" class="block py-2">About</a>
+    <a href="privacy.html" class="block py-2">Privacy</a>
+    <a href="disclaimer.html" class="block py-2">Disclaimer</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="max-w-5xl mx-auto px-5 py-12">
+  <h1 class="text-3xl font-bold mb-4">Kebijakan Privasi</h1>
+
+  <p class="mb-3 text-gray-700 dark:text-gray-300">
+      Privasi Anda sangat penting bagi kami. Website ini hanya mengumpulkan data standar
+      seperti cookies, log server, dan data analitik untuk peningkatan layanan.
+  </p>
+
+  <p class="mb-3 text-gray-700 dark:text-gray-300">
+      Kami tidak membagikan informasi pribadi kepada pihak ketiga tanpa persetujuan Anda.
+  </p>
+
+  <p class="text-gray-700 dark:text-gray-300">
+      Jika Anda memberikan data melalui formulir, data tersebut hanya digunakan untuk tujuan komunikasi.
+  </p>
+</section>
+
+<!-- FOOTER -->
+<footer class="mt-10 bg-white dark:bg-gray-800 border-t dark:border-gray-700 py-4">
+  <div class="max-w-6xl mx-auto text-center text-sm">
+    © 2025 Medan Arsitek · All Rights Reserved
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById('mobileMenu').classList.toggle('hidden')
+}
+function toggleTheme(){
+  const html = document.documentElement
+  if(html.classList.contains('dark')){
+    html.classList.remove('dark')
+    localStorage.theme = 'light'
+  } else {
+    html.classList.add('dark')
+    localStorage.theme = 'dark'
+  }
+}
+</script>
+
+</body>
+</html>
